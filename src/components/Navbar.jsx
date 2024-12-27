@@ -6,15 +6,15 @@ const Navbar = () => {
     const[showMobileMenu,setShowMobileMenu] = useState(false)
 
     useEffect(() =>{
-        if(setShowMobileMenu){
+        if(showMobileMenu){
             document.body.style.overflow = 'hidden'
         }else{
             document.body.style.overflow = 'auto'
         }
         return () => {
             document.body.style.overflow = 'auto'
-        }
-    },[setShowMobileMenu])
+        };
+    },[showMobileMenu])
 
   return (
     <div className='absolute top-0 lrft-0 w-full z-10'>
@@ -22,7 +22,7 @@ const Navbar = () => {
             <img src={assets.logo} alt="" />
             <ul className='hidden md:flex gap-7 text-white'>
                 <a href="#Header" className='cursor-pointer hover:text-gray-400'>Home</a>
-                <a href="#Header" className='cursor-pointer hover:text-gray-400'>About</a>
+                <a href="#About" className='cursor-pointer hover:text-gray-400'>About</a>
                 <a href="#Header" className='cursor-pointer hover:text-gray-400'>Projects</a>
                 <a href="#Header" className='cursor-pointer hover:text-gray-400'>Testimonials</a>
             </ul>
